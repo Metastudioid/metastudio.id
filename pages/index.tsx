@@ -92,11 +92,9 @@ const Home: NextPage = () => {
             <h2 className='text-4xl font-bold leading-snug md:text-7xl md:leading-tight md:max-w-xl md:mr-40'>
               Digital Art Is The Trend Today
             </h2>
-            <h5 className='font-medium text-gray-900 text-lg mt-2 opacity-70 md:mt-5 md:text-3xl md:max-w-xl md:leading-tight md:my-4'>
-              Metastudio is your full-service NFT's development partner. We're here to help you sell your Arts.
-            </h5>
+            <h5 className='font-medium text-gray-900 text-lg mt-2 opacity-70 md:mt-5 md:text-3xl md:max-w-xl md:leading-tight md:my-4'>Metastudio is your full-service NFT&apos;s development partner. We&apos;re here to help you sell your Arts.</h5>
             <button className='mt-4 text-lg drop-shadow-2xl hover:drop-shadow-xl bg-gradient-to-r from-fuchsia-600 via-purple-600 to-sky-600 text-white font-bold px-5 py-4 rounded-full md:mt-6'>
-              Launch Your Own NFT's Project
+              Launch Your Own NFT&apos;s Project
             </button> 
           </div>
           <div className='pt-5 order-1 md:order-2'>
@@ -110,7 +108,7 @@ const Home: NextPage = () => {
           NFT Minting Page and<br/> Landing Page Development
         </h3>
         <p className='px-10 text-base my-4 text-gray-900 font-medium opacity-70 md:text-2xl md:max-w-5xl md:mx-auto md:mt-7 md:leading-snug'>
-          Your don't need to touch the code. Let Metastudio do it for you. The Trusted partner in high volume, best-in class NFT development on the Solana Blockchain.
+          Your don&apos;t need to touch the code. Let Metastudio do it for you. The Trusted partner in high volume, best-in class NFT development on the Solana Blockchain.
         </p>
         <img className='w-4/5 mx-auto mt-8 md:mt-28 drop-shadow-2xl' src={`${basePath}/images/banner2.png`}/>
       </div>
@@ -123,7 +121,7 @@ const Home: NextPage = () => {
               NFT Artworks Creation
             </h3>
             <p className='px-10 text-base my-4 font-medium opacity-80 md:text-3xl md:px-0 md:max-w-xl md:leading-normal'>
-              We're here to help you create thousand difference instance of artworks based on provided layers.
+              We&apos;re here to help you create thousand difference instance of artworks based on provided layers.
             </p>
           </div>
           <div className='pb-2 md:mt-40'>
@@ -140,7 +138,7 @@ const Home: NextPage = () => {
               <div className='pt-8 px-7 text-center md:text-left md:px-0'>
                 <img className='mx-auto mb-3 grayscale hover:grayscale-0 md:mx-0 w-8/12 md:w-4/12 md:mb-4' src={`${basePath}/images/metastudio-logo-small.png`}/>
                 <p className='md:ml-2'>
-                  Metastudio is your full-service NFT's development partner.<br className='hidden md:block'/> We're here to help you sell your arts.
+                  Metastudio is your full-service NFT&apos;s development partner.<br className='hidden md:block'/> We&apos;re here to help you sell your arts.
                 </p>
                 <p className='mt-10 opacity-40 md:ml-2 md:mt-16 md:text-base font-medium'>Powered By</p>
                 <div className='flex items-center mt-2 md:max-w-lg'>
