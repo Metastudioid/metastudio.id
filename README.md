@@ -1,2 +1,2 @@
 # metastudio.id
-Metastudio landing page
+Metastudio landing page.
