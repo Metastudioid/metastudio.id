@@ -103,17 +103,17 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className='pt-14 mt-8 text-center md:container md:mx-auto'>
+      <div className='pt-5 text-center md:container md:mx-auto'>
         <h3 className='text-3xl px-6 font-medium leading-snug md:text-6xl md:leading-tight'>
           NFT Minting Page and<br/> Landing Page Development
         </h3>
-        <p className='px-10 text-base my-4 text-gray-900 font-medium opacity-70 md:text-2xl md:max-w-5xl md:mx-auto md:mt-7 md:leading-snug'>
+        <p className='px-10 text-base my-4 pb-9 text-gray-900 font-medium opacity-70 md:pb-0 md:text-2xl md:max-w-5xl md:mx-auto md:mt-7 md:leading-snug'>
           Your don&apos;t need to touch the code. Let Metastudio do it for you. The Trusted partner in high volume, best-in class NFT development on the Solana Blockchain.
         </p>
         <img className='w-4/5 mx-auto mt-8 md:mt-28 drop-shadow-2xl' src={`${basePath}/images/banner2.png`}/>
       </div>
       
-      <div className='bg-gradient-art bg-cover text-center text-white py-14 md:text-left'>
+      <div className='bg-gradient-art bg-cover text-center text-white py-20 md:text-left'>
         <div className='md:container md:mx-auto md:flex md:justify-between'>
           <div className='pt-2 md:py-40'>
             <h3 className='text-3xl px-6 font-medium leading-snug md:text-7xl md:leading-tight md:max-w-xl md:px-0'>
@@ -135,8 +135,8 @@ const Home: NextPage = () => {
         <div className='bg-white/90'>
           <div className='text-gray-700 text-base md:text-lg md:container md:mx-auto'>
             <div className='md:flex md:pt-11 md:justify-between md:mb-16'>
-              <div className='pt-8 px-7 text-center md:text-left md:px-0'>
-                <img className='mx-auto mb-3 grayscale hover:grayscale-0 md:mx-0 w-8/12 md:w-4/12 md:mb-4' src={`${basePath}/images/metastudio-logo-small.png`}/>
+              <div className='pt-14 pb-5 md:pb-0 px-7 text-center md:text-left md:px-0'>
+                <img className='mx-auto mb-3 grayscale hover:grayscale-0 md:mx-0 w-6/12 md:w-4/12 md:mb-4' src={`${basePath}/images/metastudio-logo-small.png`}/>
                 <p className='md:ml-2'>
                   Metastudio is your full-service NFT&apos;s development partner.<br className='hidden md:block'/> We&apos;re here to help you sell your arts.
                 </p>
