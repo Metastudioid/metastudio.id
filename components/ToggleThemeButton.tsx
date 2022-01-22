@@ -7,6 +7,7 @@ export default function ToggleThemeButton() {
   return (
     <>
       <button onClick={darkTheme.toggleTheme}>
+        {
           darkTheme.dark ?
           <MoonIcon className="opacity-80 h-6 w-6 text-white"/>
           :
