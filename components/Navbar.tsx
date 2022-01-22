@@ -4,6 +4,8 @@ import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, GlobeAltIcon, CubeTransparentIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
 import ToggleThemeButton from "./ToggleThemeButton"
+import ToggleLanguageButton from "./ToggleLanguageButton"
+import Link from 'next/link'
 
 const basePath = '/metastudio.id'
 
@@ -11,18 +13,18 @@ const solutions = [
   {
     name: 'NFT Web Development',
     description: 'Develop landing page and minting page for your NFT project',
-    href: '#',
+    href: '/#web',
     icon: GlobeAltIcon,
   },
   {
-    name: 'NFT Art Engine',
-    description: 'Generate thousands of NFT artworks based on provided layers',
-    href: '##',
+    name: 'NFT Art Maker',
+    description: 'Generate thousands of unique NFT artworks based on provided layers',
+    href: '/#art',
     icon: CubeTransparentIcon,
   }
 ]
 
-export default function Nav() {
+export default function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const darkTheme = useTheme()
 
@@ -31,7 +33,11 @@ export default function Nav() {
       <nav>
         <div className='flex py-4 px-4 md:py-10'>
           <div className='mr-auto'>
-            <img width="180" src={`${basePath}/images/metastudio-logo-${darkTheme.dark ? 'white' : 'small'}.png`} />
+            <Link href="/">
+              <a>
+                <img width="180" src={`${basePath}/images/metastudio-logo-${darkTheme.dark ? 'white' : 'small'}.png`} />
+              </a>
+            </Link>
           </div>
           <ul className='hidden md:flex text-sm items-center md:text-base text-black dark:text-white'>
             <Popover className="relative">
@@ -42,7 +48,7 @@ export default function Nav() {
                 ${open ? '' : 'text-opacity-90'}
                  group py-2 inline-flex mr-2 items-center hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
                   >
-                    <span>Our Services</span>
+                    <span>Layanan Kami</span>
                     <ChevronDownIcon
                       className={`${open ? '' : 'text-opacity-70'}
                   ml-2 h-5 w-5 opacity-50 group-hover:text-opacity-80 transition ease-in-out duration-150`}
@@ -58,27 +64,29 @@ export default function Nav() {
                     leaveFrom="opacity-100 translate-y-0"
                     leaveTo="opacity-0 translate-y-1"
                   >
-                    <Popover.Panel className="absolute z-10 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-xs">
+                    <Popover.Panel className="absolute z-10 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-sm">
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-8 bg-gray-100 dark:bg-gray-900 p-7 lg:grid-cols-1">
                           {solutions.map((item) => (
-                            <a
+                            <Link
                               key={item.name}
-                              href={item.href}
-                              className="group flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-200 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-                            >
-                              <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white sm:h-12 sm:w-12">
-                                <item.icon aria-hidden="true" className="text-gray-500 dark:text-gray-600 group-hover:text-fuchsia-500 opacity-90"/>
-                              </div>
-                              <div className="ml-4">
-                                <p className="text-sm font-medium text-gray-900 dark:text-white">
-                                  {item.name}
-                                </p>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">
-                                  {item.description}
-                                </p>
-                              </div>
-                            </a>
+                              href={item.href}>
+                              <a
+                                className="group flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-200 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                              >
+                                <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white sm:h-12 sm:w-12">
+                                  <item.icon aria-hidden="true" className="text-gray-500 dark:text-gray-600 group-hover:text-fuchsia-500 opacity-90" />
+                                </div>
+                                <div className="ml-4">
+                                  <p className="text-sm font-medium text-gray-900 dark:text-white">
+                                    {item.name}
+                                  </p>
+                                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                                    {item.description}
+                                  </p>
+                                </div>
+                              </a>
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -87,8 +95,16 @@ export default function Nav() {
                 </>
               )}
             </Popover>
-            <li className='mx-6'>Why Us</li>
-            <li className='mx-6'>Contact</li>
+            <li className='mx-6'>
+              <Link href="/whyus">
+                <a>Kenapa Harus Kami</a>
+              </Link>
+            </li>
+            <li className='mx-6'>
+              <Link href="/faq">
+                <a>Pertanyaan Yang Sering Diajukan</a>
+              </Link>
+            </li>
             <li className='ml-6 mr-4'>
               <button className='drop-shadow-md hover:drop-shadow bg-gradient-to-r from-fuchsia-600 via-purple-600 to-sky-600 text-white font-bold px-3 py-3 rounded-full'>
                 Apply Launch
@@ -98,9 +114,7 @@ export default function Nav() {
               <ToggleThemeButton />
             </li>
             <li>
-              <button className="font-medium text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-gray-400 rounded-full px-5 py-3">
-                English
-              </button>
+              <ToggleLanguageButton />
             </li>
           </ul>
           <div className="md:hidden flex items-center">

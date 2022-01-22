@@ -3,7 +3,7 @@ import Head from 'next/head'
 import React from 'react'
 import Footer from '../components/Footer'
 import { useTheme } from '../components/ThemeContext'
-import Nav from '../components/Nav'
+import Nav from '../components/Navbar'
 
 const basePath = '/metastudio.id'
 
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className='pt-5 text-center md:container md:mx-auto text-black dark:text-white'>
+          <div id="web" className='pt-5 text-center md:container md:mx-auto text-black dark:text-white'>
             <h3 className='text-3xl px-6 font-medium leading-snug md:text-6xl md:leading-tight'>
               NFT Minting Page and<br /> Landing Page Development
             </h3>
@@ -48,7 +48,7 @@ const Home: NextPage = () => {
             <img className='w-4/5 mx-auto mt-8 md:mt-28 drop-shadow-2xl' src={`${basePath}/images/banner2.png`} />
           </div>
 
-          <div className='bg-gradient-art bg-cover text-center text-white py-20 md:text-left'>
+          <div id="art" className='bg-gradient-art bg-cover text-center text-white py-20 md:text-left'>
             <div className='md:container md:mx-auto md:flex md:justify-between'>
               <div className='pt-2 md:py-40'>
                 <h3 className='text-3xl px-6 font-medium leading-snug md:text-7xl md:leading-tight md:max-w-xl md:px-0'>
