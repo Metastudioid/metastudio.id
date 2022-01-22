@@ -86,11 +86,11 @@ export default function Footer() {
             </div>
             <div className='px-7 md:px-0'>
               <hr />
-              <div className="flex py-5 pb-6 md:py-9">
+              <div className="py-5 pb-6 md:py-9">
                 <div>
                   <p className='text-center opacity-70 text-xs md:text-left md:text-base'>Copyrights &copy; 2022 Metastudio. All rights reserved.</p>
                 </div>
-                <div className="ml-auto">
+                <div className="display md:hidden pt-3 md:pt-0 text-center">
                   <ToggleThemeButton />
                 </div>
               </div>

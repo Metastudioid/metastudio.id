@@ -3,6 +3,7 @@ import { useTheme } from "./ThemeContext"
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, GlobeAltIcon, CubeTransparentIcon } from '@heroicons/react/solid'
 import { Fragment } from 'react'
+import ToggleThemeButton from "./ToggleThemeButton"
 
 const basePath = '/metastudio.id'
 
@@ -59,21 +60,21 @@ export default function Nav() {
                   >
                     <Popover.Panel className="absolute z-10 w-screen max-w-sm px-4 mt-3 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-xs">
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                        <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-1">
+                        <div className="relative grid gap-8 bg-gray-100 dark:bg-gray-900 p-7 lg:grid-cols-1">
                           {solutions.map((item) => (
                             <a
                               key={item.name}
                               href={item.href}
-                              className="group flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                              className="group flex items-center p-2 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-slate-200 dark:hover:bg-gray-700 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
                             >
                               <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white sm:h-12 sm:w-12">
-                                <item.icon aria-hidden="true" className="text-gray-400 group-hover:text-fuchsia-500 opacity-90"/>
+                                <item.icon aria-hidden="true" className="text-gray-500 dark:text-gray-600 group-hover:text-fuchsia-500 opacity-90"/>
                               </div>
                               <div className="ml-4">
-                                <p className="text-sm font-medium text-gray-900">
+                                <p className="text-sm font-medium text-gray-900 dark:text-white">
                                   {item.name}
                                 </p>
-                                <p className="text-sm text-gray-500">
+                                <p className="text-sm text-gray-500 dark:text-gray-400">
                                   {item.description}
                                 </p>
                               </div>
@@ -88,9 +89,17 @@ export default function Nav() {
             </Popover>
             <li className='mx-6'>Why Us</li>
             <li className='mx-6'>Contact</li>
-            <li className='mx-6'>
+            <li className='ml-6 mr-4'>
               <button className='drop-shadow-md hover:drop-shadow bg-gradient-to-r from-fuchsia-600 via-purple-600 to-sky-600 text-white font-bold px-3 py-3 rounded-full'>
                 Apply Launch
+              </button>
+            </li>
+            <li>
+              <ToggleThemeButton />
+            </li>
+            <li>
+              <button className="font-medium text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 dark:text-gray-400 rounded-full px-5 py-3">
+                English
               </button>
             </li>
           </ul>
