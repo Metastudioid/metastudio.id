@@ -1,15 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useState } from 'react'
-import { Transition } from '@headlessui/react'
 import React from 'react'
 import Footer from '../components/Footer'
 import { useTheme } from '../components/ThemeContext'
+import Nav from '../components/Nav'
 
 const basePath = '/metastudio.id'
 
 const Home: NextPage = () => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false)
   const darkTheme = useTheme()
 
   return (
@@ -23,76 +21,7 @@ const Home: NextPage = () => {
           </Head>
 
           <div className='min-h-screen container mx-auto max-w-8xl'>
-            <nav>
-              <div className='flex py-4 px-4 md:py-10'>
-                <div className='mr-auto'>
-                  <img width="180" src={`${basePath}/images/metastudio-logo-${darkTheme.dark ? 'white' : 'small'}.png`} />
-                </div>
-                <ul className='hidden md:flex text-sm items-center md:text-base text-black dark:text-white'>
-                  <li className='mx-5'>Our Service</li>
-                  <li className='mx-5'>Why Us</li>
-                  <li className='mx-5'>Contact</li>
-                  <li className='mx-5'>
-                    <button className='drop-shadow-md hover:drop-shadow bg-gradient-to-r from-fuchsia-600 via-purple-600 to-sky-600 text-white font-bold px-3 py-3 rounded-full'>
-                      Apply Launch
-                    </button>
-                  </li>
-                </ul>
-                <div className="md:hidden flex items-center">
-                  <button className="outline-none mobile-menu-button" onClick={() => setShowMobileMenu(!showMobileMenu)}>
-                    {
-                      !showMobileMenu ?
-                        <svg className=" w-6 h-6 text-gray-500 dark:text-gray-300"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg> :
-                        <svg
-                          className="block h-6 w-6 text-gray-500 dark:text-gray-300"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M6 18L18 6M6 6l12 12"
-                          />
-                        </svg>
-                    }
-                  </button>
-                </div>
-              </div>
-
-              <Transition
-                show={showMobileMenu}
-                enter="transition ease-out duration-100 transform"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="transition ease-in duration-75 transform"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                {(ref) => (
-                  <div className="md:hidden mobile-menu pt-3 pb-6 text-black dark:text-white">
-                    <ul className="text-center">
-                      <li className="active"><a href="" className="block text-sm px-2 py-4 font-semibold">Home</a></li>
-                      <li><a href="#services" className="block text-sm px-2 py-4 hover:bg-gray-200 transition duration-300">Our Services</a></li>
-                      <li><a href="#whyus" className="block text-sm px-2 py-4 hover:bg-gray-200 transition duration-300">Why Us</a></li>
-                      <li><a href="#contact" className="block text-sm px-2 py-4 hover:bg-gray-200 transition duration-300">Contact Us</a></li>
-                    </ul>
-                  </div>
-                )}
-              </Transition>
-            </nav>
+            <Nav/>
             <div className='md:flex grid md:min-h-fit'>
               <div className='px-5 pt-3 order-2 md:order-1 text-center md:text-left md:pt-24 text-black dark:text-white'>
                 <h2 className='text-4xl font-bold leading-snug md:text-7xl md:leading-tight md:max-w-xl md:mr-40'>
@@ -135,7 +64,7 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <Footer />
+          <Footer/>
         </div>
       </div>
     </>
